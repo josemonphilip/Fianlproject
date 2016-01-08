@@ -1,0 +1,55 @@
+﻿@model rc.Domain.ViewModel.PatientViewModel
+
+@{
+    ViewBag.Title = "Dashboard";
+    Layout = "~/Views/Shared/_patientLayout.cshtml";
+}
+<style type="text/css">
+    .dl-horizontal dt {
+        width: 100px;
+    }
+
+    .dl-horizontal dd {
+        margin-left: 110px;
+    }
+</style>
+@section image{
+    <img width="120" height="auto" src="data:image;base64,@System.Convert.ToBase64String(Model.patientAdmission.ProfilePicture)" class="img-thumbnail" />
+}
+
+<div>
+    <div class="row">
+        <div class="row">
+            <div class="col-md-7">
+                @Html.Partial("_PatientAdmissionDetails", Model.patientAdmission)
+            </div>
+            <div class="col-md-5">
+                <div class="panel panel-primary" style="font-size:x-small">
+                    <div class="panel-heading" style=" font-size:x-small"><b><i class="glyphicon glyphicon glyphicon-calendar"></i>  Care Plan</b></div>
+                    <div class="panel-body" style=" font-size:x-small">
+                        @Html.Partial("_carePlan", Model.CarePlans)
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="panel panel-primary">
+                    <div class="panel-heading"><b><i class="glyphicon glyphicon glyphicon-calendar"></i> Weight Chart</b></div>
+                    <div class="panel-body">
+                        <img src="@Url.Action("DrawWtChart")" />
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="panel panel-warning">
+                    <div class="panel-heading"><b><i class="glyphicon glyphicon glyphicon-calendar"></i>Today's  Appoinments</b></div>
+                    <div class="panel-body">
+                        @Html.Partial("_appointment", Model.PatientAppointments)
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

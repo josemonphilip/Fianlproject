@@ -1,0 +1,38 @@
+﻿@model rc.Domain.ViewModel.CarePlanViewModel
+
+@{
+    ViewBag.Title = "ListCarePlan";
+    Layout = "~/Views/Shared/_patientLayout.cshtml";
+}
+@section image{
+    <img width="120" height="auto" src="data:image;base64,@System.Convert.ToBase64String(Model.PatientAdmission.ProfilePicture)" class="img-thumbnail" /><br />
+    <div class="well well-sm">
+        <span>Name: </span>@Model.PatientAdmission.KnownAs<br />
+        <span>DOB: </span>@Model.PatientAdmission.DOB<br />
+    </div>
+}
+<h2>ListCarePlan</h2>
+<div class="row">
+    <div class="col-lg-7">
+        <table class="table table-striped table-bordered">
+            <tr>
+                <th>
+                    Care Plans
+                </th>
+                <th></th>
+            </tr>
+            @foreach (var item in Model.CarePlanList)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CarePlanDesc)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Edit", "CarePlanEdit", new { id = item.CarePlanID }, new { @Class = "btn btn-primary btn-xs" }) 
+                        @*@Html.ActionLink("Discontinue", "Delete", new { id = item.CarePlanID }, new { @Class = "btn btn-danger btn-xs" })*@
+                    </td>
+                </tr>
+            }
+        </table>
+    </div>
+</div>

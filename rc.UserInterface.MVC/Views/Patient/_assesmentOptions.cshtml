@@ -1,0 +1,12 @@
+﻿@model IEnumerable<rc.Domain.AssesmentAnswer>
+
+@foreach (var item in Model)
+{
+    <tr>
+        <td></td>
+        <td>@item.Options<br /></td>
+        <td>@Html.RadioButton(@item.AssesmentQuestionID.ToString(), @item.AssesmentAnswerID)</td>
+        <td>@Html.RadioButtonFor(r=> @item.sele, @item.AssesmentAnswerID)</td>
+    </tr>
+
+}

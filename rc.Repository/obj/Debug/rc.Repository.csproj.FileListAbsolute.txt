@@ -1,0 +1,14 @@
+C:\Josemon\HDCLOUD\Project\ResidentCare\rc.Repository\bin\Debug\rc.Repository.dll.config
+C:\Josemon\HDCLOUD\Project\ResidentCare\rc.Repository\bin\Debug\rc.Repository.dll
+C:\Josemon\HDCLOUD\Project\ResidentCare\rc.Repository\bin\Debug\rc.Repository.pdb
+C:\Josemon\HDCLOUD\Project\ResidentCare\rc.Repository\bin\Debug\EntityFramework.dll
+C:\Josemon\HDCLOUD\Project\ResidentCare\rc.Repository\bin\Debug\EntityFramework.SqlServer.dll
+C:\Josemon\HDCLOUD\Project\ResidentCare\rc.Repository\bin\Debug\rc.DAL.dll
+C:\Josemon\HDCLOUD\Project\ResidentCare\rc.Repository\bin\Debug\rc.Domain.dll
+C:\Josemon\HDCLOUD\Project\ResidentCare\rc.Repository\bin\Debug\rc.DAL.pdb
+C:\Josemon\HDCLOUD\Project\ResidentCare\rc.Repository\bin\Debug\rc.Domain.pdb
+C:\Josemon\HDCLOUD\Project\ResidentCare\rc.Repository\bin\Debug\EntityFramework.xml
+C:\Josemon\HDCLOUD\Project\ResidentCare\rc.Repository\bin\Debug\EntityFramework.SqlServer.xml
+C:\Josemon\HDCLOUD\Project\ResidentCare\rc.Repository\obj\Debug\rc.Repository.csprojResolveAssemblyReference.cache
+C:\Josemon\HDCLOUD\Project\ResidentCare\rc.Repository\obj\Debug\rc.Repository.dll
+C:\Josemon\HDCLOUD\Project\ResidentCare\rc.Repository\obj\Debug\rc.Repository.pdb

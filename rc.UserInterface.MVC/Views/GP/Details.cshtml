@@ -1,0 +1,86 @@
+﻿@model rc.Domain.GeneralPractitioner
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="panel panel-primary">
+    <div class="panel-heading"><b><i class="glyphicon glyphicon glyphicon-calendar"></i> G.P.</b></div>
+    <div class="panel-body">
+
+        <div>
+
+            <dl class="dl-horizontal">
+                <dt>
+                    @Html.DisplayNameFor(model => model.SurName)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.SurName)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.FirstName)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.FirstName)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.Address)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Address)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.Phone)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Phone)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.Mobile)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Mobile)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.Fax)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Fax)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.AdditionalNote)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.AdditionalNote)
+                </dd>
+
+            </dl>
+        </div>
+        <div class="panel-footer">
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-8">
+                    @Html.ActionLink("Edit", "Edit", new { id = Model.GeneralPractitionerID }, new { @class = "btn btn-primary" }) |
+                    @Html.ActionLink("Back to List", "Index")
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+<p>
+
+</p>

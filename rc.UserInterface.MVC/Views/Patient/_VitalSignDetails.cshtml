@@ -1,0 +1,60 @@
+﻿@model IEnumerable<rc.Domain.PatientVitalSign>
+
+<table class="table">
+    <tr>
+       
+        <th>
+            @Html.DisplayNameFor(model => model.EntryDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BP1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Pulse) /Min
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Respiration)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Tempeature)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Weight)
+        </th>
+       
+        @*<th></th>*@
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        
+        <td>
+            @Html.DisplayFor(modelItem => item.EntryDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BP1) /
+       
+            @Html.DisplayFor(modelItem => item.BP2)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Pulse)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Respiration)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Tempeature)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Weight)
+        </td>
+       
+        @*<td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.PatientVitalSignID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.PatientVitalSignID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.PatientVitalSignID })
+        </td>*@
+    </tr>
+}
+
+</table>

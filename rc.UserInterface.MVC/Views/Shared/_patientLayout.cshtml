@@ -1,0 +1,84 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title -  Residential Care</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+
+</head>
+<body>
+    <div id="wrapper">
+        <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation" style="margin-bottom: 0">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="/employee/dashboard">Residential Care [@Session["NursingHomeName"]]</a>
+
+            </div>
+            <!-- /.navbar-header -->
+            <!-- /.navbar-top-links -->
+            @Html.Partial("_LoginPartial")
+            <div class="navbar-default sidebar" role="navigation">
+                <div class="sidebar-nav navbar-collapse">
+                    <div class="thumbnail side-menu-bg" style="width: 100%; border: none; height: auto;color: #000;margin-bottom:1px; ">
+                        
+                            @RenderSection("image", required: false)
+                       
+                    </div>
+                    @{
+                        int pid = (int)Session["PatientID"];
+                    }
+                    <ul class="nav" id="side-menu">
+                        <li>
+                            <a href="/patient/index/@pid"><i class="glyphicon glyphicon-dashboard"></i> Dashboard</a>
+                        </li>
+                        <li>
+                            <a href="/patient/DailyDiary/@pid"><i class="glyphicon glyphicon-user"></i> Daily Notes</a>
+                        </li>
+                        <li>
+                            <a href="/patient/assessment/@pid"><i class="glyphicon glyphicon-stats"></i> Assements</a>
+                        </li>
+
+                        <li>
+                            <a href="/patient/ListCarePlan/@pid"><i class="glyphicon glyphicon-file"></i>  Care Plan List</a>
+                        </li>
+                        <li>
+                            <a href="/patient/CarePlan/@pid"><i class="glyphicon glyphicon-inbox"></i>  New Care Plan</a>
+                        </li>
+
+                        <li>
+                            <a href="/patient/vitalsign/@pid"><i class="glyphicon glyphicon-hourglass"></i> Vital Signs/Wt.</a>
+                        </li>
+                        <li>
+                            <a href="/patient/Appointmentlist"><i class="glyphicon glyphicon-list-alt"></i> Appoinments</a>
+                        </li>
+                    </ul>
+                </div>
+                <!-- /.sidebar-collapse -->
+            </div>
+            <!-- /.navbar-static-side -->
+        </nav>
+
+        <div id="page-wrapper" style="padding-top: 60px;">
+            @RenderBody()
+        </div>
+        <hr />
+        <footer class="text-muted" style="margin:0px; margin-bottom:5px;">
+
+            <p>&copy; @DateTime.Now.Year - Josemon Philip - Residential Care</p>
+
+        </footer>
+
+    </div>
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

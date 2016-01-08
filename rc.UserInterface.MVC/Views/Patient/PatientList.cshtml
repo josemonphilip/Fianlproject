@@ -1,0 +1,21 @@
+﻿@model IEnumerable<rc.Domain.PatientAdmission>
+
+@{
+    ViewBag.Title = "Patient List";
+}
+
+<h2>PatientList</h2>
+
+<div class="row">
+    @foreach (var item in Model)
+    {
+        <div class="col-xs-2 col-xs-3" style="min-height:120px">
+            <a href="/patient/index/@item.PatientAdmissionID" class="thumbnail">
+                <img width="120" height="120" src="data:image;base64,@System.Convert.ToBase64String(item.ProfilePicture)" class="img-thumbnail" /><br />
+            </a>
+            <div class="patient-name">
+                @item.Surname  @item.FirstName
+            </div>
+        </div>
+    }
+</div>

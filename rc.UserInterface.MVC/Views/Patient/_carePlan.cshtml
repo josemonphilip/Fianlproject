@@ -1,0 +1,23 @@
+﻿@model IEnumerable<rc.Domain.CarePlan>
+
+<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+    @foreach (rc.Domain.CarePlan item in Model)
+    {
+        <div class="panel panel-primary">
+            <div class="panel-heading" role="tab" id="headingOne">
+                <h4 class="panel-title">
+                    <a data-toggle="collapse" data-parent="#accordion" href="#collapse_@item.CarePlanID" aria-expanded="true" aria-controls="collapseOne">
+                        @item.CarePlanDesc
+                    </a>
+                </h4>
+            </div>
+            <div id="collapse_@item.CarePlanID" class="panel-collapse collapse " role="tabpanel" aria-labelledby="headingOne">
+                <div class="panel-body">
+                    <span>Goal: </span> @item.Goal <br /><br />
+                    <span>Intervention: </span><br />
+                    @item.Intervention
+                </div>
+            </div>
+        </div>
+    }
+</div>

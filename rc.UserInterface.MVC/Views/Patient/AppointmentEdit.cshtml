@@ -1,0 +1,72 @@
+﻿@model rc.Domain.ViewModel.PatientAppointmentViewModel
+
+@{
+    ViewBag.Title = "AppointmentEdit";
+    Layout = "~/Views/Shared/_patientLayout.cshtml";
+}
+
+@section image{
+    <img width="120" height="auto" src="data:image;base64,@System.Convert.ToBase64String(Model.PatientAdmission.ProfilePicture)" class="img-thumbnail" /><br />
+    <div class="well well-sm">
+        <span>Name: </span>@Model.PatientAdmission.KnownAs<br />
+        <span>DOB: </span>@Model.PatientAdmission.DOB<br />
+    </div>
+}
+<div class="panel panel-primary">
+    <div class="panel-heading"><b><i class="glyphicon glyphicon glyphicon-calendar"></i>  Appoinments</b></div>
+    <div class="panel-body">
+
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+
+            <div class="form-horizontal">
+                <h4>Patient Appoinment</h4>
+                <hr />
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                @Html.HiddenFor(model => model.PatientAppointment.PatientAppointmentID)
+                @Html.HiddenFor(model => model.PatientAppointment.PatientID)
+                @Html.HiddenFor(model => model.PatientAppointment.CustID)
+                <div class="form-group">
+                    @Html.LabelFor(model => model.PatientAppointment.AppointmentDate, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        <div class='input-group date' id='datetimepicker1'>
+                            @Html.TextBoxFor(model => model.PatientAppointment.AppointmentDate, new { @class = "form-control" })
+                            <span class="input-group-addon">
+                                <span class="glyphicon glyphicon-calendar"></span>
+                            </span>
+                        </div>
+
+                        @Html.ValidationMessageFor(model => model.PatientAppointment.AppointmentDate, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.PatientAppointment.Desctiprion, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.PatientAppointment.Desctiprion, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.PatientAppointment.Desctiprion, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+
+
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-10">
+                        <input type="submit" value="Save" class="btn btn-primary" />
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>
+<div>
+    @Html.ActionLink("Back to List", "AppointmentList", "Patient", new { @class = "btn btn-warning" })
+</div>
+@section scripts{
+    <script type="text/javascript">
+        $(function () {
+            $('#datetimepicker1').datetimepicker();
+        });
+    </script>
+}

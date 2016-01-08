@@ -1,0 +1,161 @@
+﻿@model rc.Domain.ViewModel.VitalSignViewModel
+
+@{
+    ViewBag.Title = "VitalSign";
+    Layout = "~/Views/Shared/_patientLayout.cshtml";
+}
+
+@section image{
+    <img width="120" height="auto" src="data:image;base64,@System.Convert.ToBase64String(Model.PatientAdmission.ProfilePicture)" class="img-thumbnail" /><br />
+    <div class="well well-sm">
+        <span>Name: </span>@Model.PatientAdmission.KnownAs<br />
+        <span>DOB: </span>@Model.PatientAdmission.DOB<br />
+    </div>
+}
+
+<div class="row" style="margin-top:60px">
+    <div class="col-md-5">
+        <div class="panel panel-primary">
+            <div class="panel-heading"><b>Vital Signs</b></div>
+            <div class="panel-body">
+                @*@using (Html.BeginForm())
+                    {*@
+                @Html.AntiForgeryToken()
+                <div class="form-horizontal">
+
+                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.PatientVitalSign.EntryDate, htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-7">
+                            <div class="input-group">
+                                @Html.EditorFor(model => model.PatientVitalSign.EntryDate, new { htmlAttributes = new { @class = "form-control datepicker" } })
+                                @Html.ValidationMessageFor(model => model.PatientVitalSign.EntryDate, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.PatientVitalSign.BP1, htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-7">
+                            <div class="input-group">
+                                <div class="row">
+                                    <div class="col-md-5">
+                                        @Html.EditorFor(model => model.PatientVitalSign.BP1, new { htmlAttributes = new { @class = "form-control" } })
+                                        </div> 
+                                    <div class="col-md-2 text-center">
+                                        /
+                                        </div>
+                                        <div class="col-md-5">
+                                            @Html.EditorFor(model => model.PatientVitalSign.BP2, new { htmlAttributes = new { @class = "form-control" } })
+                                        </div>
+                                    </div>
+                                @Html.ValidationMessageFor(model => model.PatientVitalSign.BP1, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.PatientVitalSign.Pulse, htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-7">
+                            <div class="input-group">
+                                @Html.EditorFor(model => model.PatientVitalSign.Pulse, new { htmlAttributes = new { @class = "form-control" } })
+                                <span class="input-group-addon" id="basic-addon2">/Minute</span>
+                                @Html.ValidationMessageFor(model => model.PatientVitalSign.Pulse, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.PatientVitalSign.Respiration, htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-7">
+                            <div class="input-group">
+                                @Html.EditorFor(model => model.PatientVitalSign.Respiration, new { htmlAttributes = new { @class = "form-control" } })
+                                <span class="input-group-addon" id="basic-addon2">/Minute</span>
+                                @Html.ValidationMessageFor(model => model.PatientVitalSign.Respiration, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.PatientVitalSign.Tempeature, htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-7">
+                            <div class="input-group">
+                                @Html.EditorFor(model => model.PatientVitalSign.Tempeature, new { htmlAttributes = new { @class = "form-control" } })
+                                <span class="input-group-addon" id="basic-addon2"><sup>0</sup>C</span>
+                                @Html.ValidationMessageFor(model => model.PatientVitalSign.Tempeature, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.PatientVitalSign.Weight, htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-7">
+                            <div class="input-group">
+                                @Html.EditorFor(model => model.PatientVitalSign.Weight, new { htmlAttributes = new { @class = "form-control" } })
+                                <span class="input-group-addon" id="basic-addon2">/Kg</span>
+                                @Html.ValidationMessageFor(model => model.PatientVitalSign.Weight, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-offset-2 col-md-10">
+                            <button id="save" class="submitt btn btn-primary">Save</button>
+                        </div>
+                    </div>
+                </div>
+                @*}*@
+            </div>
+        </div>
+    </div>
+    <div class="col-md-7">
+        <div class="panel panel-primary">
+            <div class="panel-heading"><b>Vital Signs</b></div>
+            <div class="panel-body">
+                <div id="vSigns">
+                    @Html.Partial("_VitalSignDetails", Model.PatientVitalSigns)
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@section scripts{
+    <script type="text/javascript">
+        $("#save").click(function () {
+            EntryDate = $("#PatientVitalSign_EntryDate").val();
+            BP1 = $("#PatientVitalSign_BP1").val();
+            BP2 = $("#PatientVitalSign_BP2").val();
+            Pulse = $("#PatientVitalSign_Pulse").val();
+            Respiration = $("#PatientVitalSign_Respiration").val();
+            Tempeature = $("#PatientVitalSign_Tempeature").val();
+            Weight = $("#PatientVitalSign_Weight").val();
+            //BP1 = $("#PatientVitalSign_BP1").val();
+           
+            $.ajax({
+                url: '/Patient/VitaSignSaveJson',
+                type: 'POST',
+                data: JSON.stringify({
+                    "EntryDate": EntryDate,
+                    "BP1": BP1,
+                    "BP2": BP2,
+                    "Pulse": Pulse,
+                    "Respiration": Respiration,
+                    "Tempeature": Tempeature,
+                    "Weight": Weight
+                }),
+                contentType: 'application/json; charset=utf-8',
+                success: function (data) {
+                    $('#vSigns').load('/Patient/ListVitalSignJson');
+                    $("#PatientVitalSign_EntryDate").val("");
+                    $("#PatientVitalSign_BP1").val("");
+                    $("#PatientVitalSign_BP2").val("");
+                    $("#PatientVitalSign_Pulse").val("");
+                    $("#PatientVitalSign_Respiration").val("");
+                    $("#PatientVitalSign_Tempeature").val("");
+                    $("#PatientVitalSign_Weight").val("");
+
+                },
+                error: function () {
+                    alert("error");
+                }
+            })
+        });
+
+    </script>
+}

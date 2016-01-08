@@ -1,0 +1,5 @@
+C:\Josemon\HDCLOUD\Project\ResidentCare\rc.Domain\bin\Debug\rc.Domain.dll
+C:\Josemon\HDCLOUD\Project\ResidentCare\rc.Domain\bin\Debug\rc.Domain.pdb
+C:\Josemon\HDCLOUD\Project\ResidentCare\rc.Domain\obj\Debug\rc.Domain.dll
+C:\Josemon\HDCLOUD\Project\ResidentCare\rc.Domain\obj\Debug\rc.Domain.pdb
+C:\Josemon\HDCLOUD\Project\ResidentCare\rc.Domain\obj\Debug\rc.Domain.csprojResolveAssemblyReference.cache

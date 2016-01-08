@@ -1,0 +1,78 @@
+﻿@model rc.Domain.ViewModel.CarePlanViewModel
+
+@{
+    ViewBag.Title = "CarePlan";
+    Layout = "~/Views/Shared/_patientLayout.cshtml";
+}
+@section image{
+        <img width="120" height="auto" src="data:image;base64,@System.Convert.ToBase64String(Model.PatientAdmission.ProfilePicture)" class="img-thumbnail" /><br />
+        <div class="well well-sm">
+            <span>Name: </span>@Model.PatientAdmission.KnownAs<br />
+            <span>DOB: </span>@Model.PatientAdmission.DOB<br />
+        </div>
+    }
+
+<h2>CarePlan</h2>
+<div class="row">
+    <div class="col-lg-7">
+
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+
+            <div class="form-horizontal">
+
+                <div class="panel panel-primary">
+                    <div class="panel-heading"><b>Care Plan</b></div>
+                    <div class="panel-body">
+                        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.CarePlan.CarePlanDesc, htmlAttributes: new { @class = "control-label col-md-2" })
+                            <div class="col-md-10">
+                                @Html.EditorFor(model => model.CarePlan.CarePlanDesc, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.CarePlan.CarePlanDesc, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.CarePlan.Goal, htmlAttributes: new { @class = "control-label col-md-2" })
+                            <div class="col-md-10">
+                               @Html.TextAreaFor(model => model.CarePlan.Goal, 4, 80, new { @width = "100%", @class = "form-control" })
+                                @Html.ValidationMessageFor(model => model.CarePlan.Goal, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.CarePlan.Intervention, htmlAttributes: new { @class = "control-label col-md-2" })
+                            <div class="col-md-10">
+                               @Html.TextAreaFor(model => model.CarePlan.Intervention, 8, 80, new { @width = "100%", @class = "form-control" })
+                                @Html.ValidationMessageFor(model => model.CarePlan.Intervention, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-offset-2 col-md-10">
+                                <input type="submit" value="Create" class="btn btn-primary" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+    <div class="col-lg-5">
+        @*<div class="panel panel-primary">
+            <div class="panel-heading"><b><i class="glyphicon glyphicon glyphicon-calendar"></i>  Assesments</b></div>
+            <div class="panel-body" style="font-size:x-small">
+               
+            </div>
+        </div>*@
+        <div class="panel panel-primary">
+            <div class="panel-heading"><b><i class="glyphicon glyphicon glyphicon-calendar"></i>  Care Plan</b></div>
+            <div class="panel-body" style="font-size:x-small">
+                @Html.Partial("_carePlan",Model.CarePlanList)
+            </div>
+        </div>
+    </div>
+</div>

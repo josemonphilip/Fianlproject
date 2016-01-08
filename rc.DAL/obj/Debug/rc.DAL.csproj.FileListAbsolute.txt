@@ -1,0 +1,12 @@
+C:\Josemon\HDCLOUD\Project\ResidentCare\rc.DAL\bin\Debug\rc.DAL.dll.config
+C:\Josemon\HDCLOUD\Project\ResidentCare\rc.DAL\bin\Debug\rc.DAL.dll
+C:\Josemon\HDCLOUD\Project\ResidentCare\rc.DAL\bin\Debug\rc.DAL.pdb
+C:\Josemon\HDCLOUD\Project\ResidentCare\rc.DAL\bin\Debug\EntityFramework.dll
+C:\Josemon\HDCLOUD\Project\ResidentCare\rc.DAL\bin\Debug\EntityFramework.SqlServer.dll
+C:\Josemon\HDCLOUD\Project\ResidentCare\rc.DAL\bin\Debug\rc.Domain.dll
+C:\Josemon\HDCLOUD\Project\ResidentCare\rc.DAL\bin\Debug\rc.Domain.pdb
+C:\Josemon\HDCLOUD\Project\ResidentCare\rc.DAL\bin\Debug\EntityFramework.xml
+C:\Josemon\HDCLOUD\Project\ResidentCare\rc.DAL\bin\Debug\EntityFramework.SqlServer.xml
+C:\Josemon\HDCLOUD\Project\ResidentCare\rc.DAL\obj\Debug\rc.DAL.csprojResolveAssemblyReference.cache
+C:\Josemon\HDCLOUD\Project\ResidentCare\rc.DAL\obj\Debug\rc.DAL.dll
+C:\Josemon\HDCLOUD\Project\ResidentCare\rc.DAL\obj\Debug\rc.DAL.pdb

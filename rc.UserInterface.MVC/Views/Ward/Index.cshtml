@@ -1,0 +1,38 @@
+﻿@model IEnumerable<rc.Domain.Ward>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_adminLayout.cshtml";
+}
+
+
+<p>
+    @Html.ActionLink("Create New", "Create", null, new { @class = "btn btn-primary" })
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Description)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TotalBeds)
+        </th>
+       
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Description)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TotalBeds)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id = item.WardID }, new { @class = "btn btn-warning  btn-xs" })
+        </td>
+    </tr>
+}
+
+</table>

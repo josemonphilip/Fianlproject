@@ -1,0 +1,45 @@
+﻿@model rc.Domain.ViewModel.PatientAppointmentViewModel
+
+@{
+    ViewBag.Title = "AppointmentList";
+    Layout = "~/Views/Shared/_patientLayout.cshtml";
+}
+@section image{
+    <img width="120" height="auto" src="data:image;base64,@System.Convert.ToBase64String(Model.PatientAdmission.ProfilePicture)" class="img-thumbnail" /><br />
+    <div class="well well-sm">
+        <span>Name: </span>@Model.PatientAdmission.KnownAs<br />
+        <span>DOB: </span>@Model.PatientAdmission.DOB<br />
+    </div>
+}
+<h2>AppointmentList</h2>
+
+<p>
+    <a class=" btn btn-primary btn-mini" href=@Url.Action("Appointment", "Patient")>New Appointment </a>
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.PatientAppointment.AppointmentDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PatientAppointment.Desctiprion)
+        </th>
+    
+        <th></th>
+    </tr>
+
+@foreach (var item in Model.PatientAppointments) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.AppointmentDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Desctiprion)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "AppointmentEdit","Patient", new { id = item.PatientAppointmentID }, new { @class = "btn btn-warning btn-xs" }) 
+        </td>
+    </tr>
+}
+
+</table>

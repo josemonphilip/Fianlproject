@@ -1,0 +1,234 @@
+﻿body {
+    background-color: #f8f8f8;
+       font-family: 'Open Sans', sans-serif;
+      /* margin-bottom: 60px;*/
+
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+/* Set width on the form input elements since they're 100% wide by default
+input,
+select,
+textarea {
+    max-width: 280px;
+} */
+
+#wrapper {
+    width: 100%;
+}
+#page-wrapper {
+    padding: 0 15px;
+    min-height: 568px;
+    background-color: #fff;
+}
+
+@media(min-width:768px) {
+    #page-wrapper {
+        position: inherit;
+        margin: 0 0 0 250px;
+        padding: 0 30px;
+        border-left: 1px solid #e7e7e7;
+    }
+}
+.navbar-top-links {
+    margin-right: 0;
+}
+
+.navbar-top-links li {
+    display: inline-block;
+}
+.sidebar .sidebar-nav.navbar-collapse{
+    padding-right:0;
+    padding-left:0;
+}
+
+.sidebar ul li {
+    border-bottom :1px solid #e7e7e7;
+}
+
+.sidebar ul li a.active{
+    background-color:#eee;
+}
+
+.sidebar .nav-second-level li{
+    border-bottom:0!important;
+}
+.sidebar .nav-second-level li a{
+    padding-left:37px;
+}
+
+
+
+.sticky-footer{
+   /* position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 60px;
+  background-color: #f5f5f5;
+
+    */
+}
+.container{
+    width:auto;
+    padding:20px 0;
+}
+@media(min-width:768px) {
+    .sidebar {
+        z-index: 1;
+        position: absolute;
+        width: 250px;
+        margin-top: 51px;
+    }
+
+    .navbar-top-links .dropdown-messages,
+    .navbar-top-links .dropdown-tasks,
+    .navbar-top-links .dropdown-alerts {
+        margin-left: auto;
+    }
+}
+
+.no-margin-right{
+    margin-right: 10px !important;
+}
+
+.thumbnail {
+    height: 180px;
+    width: 140px;
+    margin-bottom: 5px;
+}
+
+.patient-name {
+    width: 140px;
+    text-align: center;
+}
+
+#side-menu li, .sidebar-nav {
+    background-color: #2f4050 !important;
+     
+  font-size: 13px;
+  color: #676a6c;
+}
+
+#side-menu li {
+    border: none;
+}
+
+#side-menu li a {
+   text-decoration: none;
+   color: #676a6c;
+
+}
+
+
+#wrapper {
+     background-color: #2f4050 !important;
+}
+
+.navbar-inverse {
+  background-color: #2F3D4A;
+   border-color: #2F3D4A; 
+}
+
+table {
+    border-collapse: collapse;
+    margin-bottom: 3em;
+    width: 100%;
+    background: #fff;
+}
+td, th {
+    padding: 0.75em 1.5em;
+    text-align: left;
+}
+	td.err {
+		background-color: #e992b9;
+		color: #fff;
+		font-size: 0.75em;
+		text-align: center;
+		line-height: 1;
+	}
+th {
+    background-color: #31bc86;
+    font-weight: bold;
+    color: #fff;
+    white-space: nowrap;
+}
+tbody th {
+	background-color: #2ea879;
+}
+tbody tr:nth-child(2n-1) {
+    background-color: #f5f5f5;
+    transition: all .125s ease-in-out;
+}
+tbody tr:hover {
+    background-color: rgba(129,208,177,.3);
+}
+
+/*****************************/
+body {
+  color: #868686;
+  background: #32C2CD !important;
+   background: url("/Images/side-bar-list-bg.png");
+}
+
+#side-menu{
+     background: #32C2CD !important;
+}
+#wrapper {
+     background-color: #32C2CD !important;
+       background: url("/Images/side-bar-list-bg.png");
+}
+
+.side-menu-bg {
+      background: url("/Images/side-bar-list-bg.png");
+}
+#side-menu li, .sidebar-nav {
+    background-color: #32C2CD !important;
+
+  font-size: 13px;
+  color: #ffffff;
+}
+
+
+
+#side-menu li {
+    border: none;
+    border-bottom: 1px solid #93C4E4;
+    line-height: 20px;
+}
+
+#side-menu li a {
+   text-decoration: none;
+   color: #ffffff;
+
+}
+
+.nav > li > a:hover, .nav > li > a:focus {
+  text-decoration: none;
+  /*background-color: #178A93;*/
+  background: url("/Images/submenu_hover.png") !important;
+}
+
+#side-menu li {
+  display: block;
+  margin: 0 0 1px 0;
+  padding: 0;
+  border: 0px;
+  background: url("/Images/side-bar-list-bg.png");
+  line-height: 20px;
+}
+#header.navbar-inverse .navbar-inner {
+  background: #4e4e4e ;
+
+}

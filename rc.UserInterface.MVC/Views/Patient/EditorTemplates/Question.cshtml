@@ -1,0 +1,24 @@
+﻿@model rc.ServiceLayer.Question
+
+@Html.HiddenFor(x => x.ID)
+
+<tr>
+    <td>
+        <b> @Model.QuestionText</b>
+    </td>
+    <td></td>
+</tr>
+
+@foreach (var a in Model.Answers)
+{
+    <tr>
+        <td>
+            @Html.RadioButtonFor(b => b.SelectedAnswer, a.ID) @a.AnswerText
+        </td>
+        <td>    </td>
+        <td>
+            @a.Score
+        </td>
+    </tr>
+}
+

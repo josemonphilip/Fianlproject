@@ -1,0 +1,18 @@
+﻿@model IEnumerable<rc.Domain.PatientDailyDiary>
+
+<div class="panel panel-info">
+    <div class="panel-heading"><b><i class="glyphicon glyphicon glyphicon-list-alt"></i> Previous Notes</b></div>
+    @foreach (rc.Domain.PatientDailyDiary item in Model)
+    {
+        <div class="panel-body">
+            <div class="success">
+               @item.DiaryNotes
+            </div>
+        </div>
+        <div class="panel-footer">
+            <i class="glyphicon glyphicon-star-empty"></i>
+            <div class="pull-right" style="font-size:small"> date time:@item.EntryDate </div>
+        </div>
+    }
+</div>
+<input type="submit" value="More" class="btn btn-warning btn-lg btn-block" />

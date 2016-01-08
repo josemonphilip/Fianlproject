@@ -1,0 +1,20 @@
+﻿@model IEnumerable<rc.Domain.PatientAppointment>
+<table class="table">
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.AppointmentDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PatientAdmission.FirstName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PatientAdmission.Surname)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Desctiprion)
+            </td>
+        </tr>
+    }
+</table>

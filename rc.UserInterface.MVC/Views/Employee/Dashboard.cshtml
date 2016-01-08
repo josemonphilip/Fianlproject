@@ -1,0 +1,23 @@
+﻿@model rc.Domain.ViewModel.EmployeeDashboardViewModel
+@{
+    ViewBag.Title = "Dashboard";
+}
+<h2>Staff Dashboard</h2>
+<div class="row">
+    <div class="col-md-6">
+        <div class="panel panel-primary">
+            <div class="panel-heading"><b>Today's Appointment</b></div>
+            <div class="panel-body">
+                @Html.Partial("_appointment", Model.PatientAppointments)
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="panel panel-primary">
+            <div class="panel-heading"><b>Upcomming Birthdays</b></div>
+            <div class="panel-body">
+                @Html.Partial("_birthDayList", Model.Birthdays)
+            </div>
+        </div>
+    </div>
+</div>

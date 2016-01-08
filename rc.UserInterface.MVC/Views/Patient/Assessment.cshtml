@@ -1,0 +1,23 @@
+﻿@model rc.ServiceLayer.Evaluation
+@{
+    ViewBag.Title = "CarePlan";
+    Layout = "~/Views/Shared/_patientLayout.cshtml";
+}
+@section image{
+    <img width="120" height="auto" src="data:image;base64,@System.Convert.ToBase64String((byte[])Session["Image"])" class="img-thumbnail" />
+}
+<div class="row">
+    <div class="panel panel-primary">
+        <div class="panel-heading"><b><i class="glyphicon glyphicon glyphicon-calendar"></i> Assesment</b></div>
+        <div class="panel-body">
+            @using (Html.BeginForm())
+            {
+                <table>
+                    <tr><th></th></tr>
+                    @Html.EditorFor(x => x.Questions)
+                </table>
+                <input type="submit" />
+            }
+        </div>
+    </div>
+</div>

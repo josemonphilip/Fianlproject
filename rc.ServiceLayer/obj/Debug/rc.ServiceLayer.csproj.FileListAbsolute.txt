@@ -1,0 +1,13 @@
+C:\Josemon\HDCLOUD\Project\ResidentCare\rc.ServiceLayer\obj\Debug\rc.ServiceLayer.csprojResolveAssemblyReference.cache
+C:\Josemon\HDCLOUD\Project\ResidentCare\rc.ServiceLayer\bin\Debug\rc.ServiceLayer.dll
+C:\Josemon\HDCLOUD\Project\ResidentCare\rc.ServiceLayer\bin\Debug\rc.ServiceLayer.pdb
+C:\Josemon\HDCLOUD\Project\ResidentCare\rc.ServiceLayer\bin\Debug\rc.Domain.dll
+C:\Josemon\HDCLOUD\Project\ResidentCare\rc.ServiceLayer\bin\Debug\rc.Repository.dll
+C:\Josemon\HDCLOUD\Project\ResidentCare\rc.ServiceLayer\bin\Debug\rc.DAL.dll
+C:\Josemon\HDCLOUD\Project\ResidentCare\rc.ServiceLayer\bin\Debug\EntityFramework.dll
+C:\Josemon\HDCLOUD\Project\ResidentCare\rc.ServiceLayer\bin\Debug\rc.Domain.pdb
+C:\Josemon\HDCLOUD\Project\ResidentCare\rc.ServiceLayer\bin\Debug\rc.Repository.pdb
+C:\Josemon\HDCLOUD\Project\ResidentCare\rc.ServiceLayer\bin\Debug\rc.DAL.pdb
+C:\Josemon\HDCLOUD\Project\ResidentCare\rc.ServiceLayer\bin\Debug\EntityFramework.xml
+C:\Josemon\HDCLOUD\Project\ResidentCare\rc.ServiceLayer\obj\Debug\rc.ServiceLayer.dll
+C:\Josemon\HDCLOUD\Project\ResidentCare\rc.ServiceLayer\obj\Debug\rc.ServiceLayer.pdb
